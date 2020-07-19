@@ -1,0 +1,15 @@
+docker build -t nosql-menu-db .
+docker run -d -p 3333:3333 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=Manager -e MYSQL_USER=admin -e MYSQL_PASSWORD=123456 nosql-menu-db
+docker exec -it <container_id> bash
+    mysql -uroot -p
+docker stop <container_id>
+
+Comandos MySQL CLI:
+    SHOW DATABASES;
+        Mostra a estrutura criada
+    USE <database_name>;
+        Acessa a tabela
+    SHOW TABLES;
+        Mostra as tabelas
+    SHOW VARIABLES LIKE 'mysqlx_port';
+        Obtém a porta onde está executando com o plugin X
